@@ -215,6 +215,11 @@ typedef NS_ENUM(NSInteger, MXSegmentedControlPosition) {
 @property (nonatomic) UIEdgeInsets segmentedControlEdgeInsets;
 
 /**
+ Prevents reloading view on layoutSubviews
+ */
+@property (nonatomic, assign) BOOL shouldNotLoadOnStart;
+
+/**
  Reloads everything from scratch. redisplays pages.
  */
 - (void)reloadData;
@@ -223,7 +228,6 @@ typedef NS_ENUM(NSInteger, MXSegmentedControlPosition) {
  Scrolls the main contentView back to the top position
  */
 - (void)scrollToTopAnimated:(BOOL)animated;
-
 @end
 
 /**

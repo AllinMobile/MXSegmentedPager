@@ -93,7 +93,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if (_count <= 0) {
+    if (_count <= 0 && !_shouldNotLoadOnStart) {
         [self reloadData];
     }
     
@@ -124,7 +124,7 @@
         frame.origin.y -= _controlHeight;
         frame.origin.y -= self.segmentedControlEdgeInsets.bottom;
     }
-
+    
     frame.size.width -= self.segmentedControlEdgeInsets.left;
     frame.size.width -= self.segmentedControlEdgeInsets.right;
     frame.size.height = _controlHeight;
@@ -266,7 +266,7 @@
     
     NSString* title = self.segmentedControl.sectionTitles[index];
     UIView* view = self.pager.selectedPage;
-                    
+    
     if ([self.delegate respondsToSelector:@selector(segmentedPager:didSelectViewWithTitle:)]) {
         [self.delegate segmentedPager:self didSelectViewWithTitle:title];
     }
