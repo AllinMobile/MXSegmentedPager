@@ -1,6 +1,6 @@
 // MXWebViewController.swift
 //
-// Copyright (c) 2016 Maxime Epain
+// Copyright (c) 2017 Maxime Epain
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,14 +29,8 @@ class MXWebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let url = URL(string: "http://nshipster.com/");
-        let request = URLRequest(url: url!);
-        self.webView.loadRequest(request);
+        let url = URL(string: "http://nshipster.com/")!
+        let request = URLRequest(url: url)
+        webView.loadRequest(request)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-
 }
